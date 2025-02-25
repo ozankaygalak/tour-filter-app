@@ -22,7 +22,7 @@ export const mockTours = [
   {
     id: 2,
     name: "Bangkok City Tour",
-    image: "default.jpg",
+    image: "city3.jpg",
     location: "Bangkok, Thailand",
     oldPrice: 1200,
     price: 900,
@@ -62,7 +62,7 @@ export const mockTours = [
   {
     id: 4,
     name: "Snorkeling at Similan Islands",
-    image: "default.jpg",
+    image: "snorkel2.jpg",
     location: "Phuket, Thailand",
     oldPrice: 1600,
     price: 1500,
@@ -82,7 +82,7 @@ export const mockTours = [
   {
     id: 5,
     name: "Ayutthaya Historical Tour",
-    image: "b1.jpg",
+    image: "ayutthaya.jpg",
     location: "Ayutthaya, Thailand",
     oldPrice: 1300,
     price: 1200,
