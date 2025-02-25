@@ -6,11 +6,17 @@ import TourCard from "../components/TourCard";
 import { mockTours } from "../data/mockData";
 
 interface FilterState {
-  price: number;
-  selectedCategory: string;
-  selectedTheme?: string;
+  category: string;
+  theme?: string;
+  activity?: string;
+  eventType?: string;
+  vehicle?: string;
+  price?: number;
   startTime?: number;
   groupSize?: number;
+  rentalPeriod?: string;
+  location?: string;
+  features?: string;
 }
 
 export default function HomePage() {
@@ -18,13 +24,22 @@ export default function HomePage() {
   const [filteredTours, setFilteredTours] = useState(mockTours);
 
   const handleApplyFilters = (filters: FilterState) => {
-    const filtered = mockTours.filter(
-      (tour) =>
-        tour.price <= filters.price &&
-        tour.category === filters.selectedCategory &&
-        (filters.selectedTheme ? tour.theme === filters.selectedTheme : true)
-    );
+    const filtered = mockTours.filter((tour) => {
+      return (
+        (!filters.category || tour.category === filters.category) &&
+        (!filters.theme || tour.theme === filters.theme) &&
+        (!filters.activity || tour.activity === filters.activity) &&
+        (!filters.vehicle || tour.vehicle === filters.vehicle) &&
+        (!filters.price || tour.price <= filters.price) &&
+        (!filters.startTime || tour.startTime <= filters.startTime) &&
+        (!filters.groupSize || tour.groupSize <= filters.groupSize) &&
+        (!filters.eventType || tour.eventType === filters.eventType) &&
+        (!filters.location || tour.location?.toLowerCase().includes(filters.location.toLowerCase()))
+      );
+    });
+
     setFilteredTours(filtered);
+    setFilterOpen(false);
   };
 
   return (
