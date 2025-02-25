@@ -18,6 +18,7 @@ export const mockTours = [
     groupSize: 20,
     vehicle: "Speedboat",
     features: "Halal Food",
+    description: "Discover the stunning Phi Phi Islands with this full-day speedboat tour. Enjoy crystal-clear waters, white sandy beaches, and breathtaking scenery."
   },
   {
     id: 2,
@@ -38,6 +39,7 @@ export const mockTours = [
     groupSize: 15,
     vehicle: "Yacht",
     features: "Vegetarian Food",
+    description: "Explore the heart of Bangkok with our guided city tour. Visit the Grand Palace, Wat Pho, and vibrant street markets."
   },
   {
     id: 3,
@@ -58,6 +60,7 @@ export const mockTours = [
     groupSize: 10,
     vehicle: "Catamaran",
     features: "Halal Food",
+     description: "Experience an unforgettable adventure at Chiang Mai's Elephant Safari. Get up close with gentle giants, enjoy a jungle trek, and learn about elephant care in an ethical environment."
   },
   {
     id: 4,
@@ -78,6 +81,7 @@ export const mockTours = [
     groupSize: 25,
     vehicle: "Speedcatamaran",
     features: "Transfer",
+    description: "Dive into the crystal-clear waters of the Similan Islands. Explore vibrant coral reefs, swim alongside exotic marine life, and enjoy a relaxing day on pristine beaches."
   },
   {
     id: 5,
@@ -98,6 +102,7 @@ export const mockTours = [
     groupSize: 30,
     vehicle: "Bus",
     features: "Vegetarian Food",
+    description: "Step back in time with a visit to the ancient city of Ayutthaya. Discover centuries-old temples, historic ruins, and cultural landmarks on this guided historical tour."
   },
   {
     id: 6,
@@ -120,6 +125,7 @@ export const mockTours = [
     duration: "2-3 hours",
     ticketType: "Standard Admission",
     vehicle: "None",
+    description: "Experience modern Thai art at the Museum of Contemporary Art in Bangkok. Discover unique exhibitions and creative masterpieces."
   },
   {
     id: 7,
@@ -140,6 +146,7 @@ export const mockTours = [
     duration: "1.5-2 hours",
     ticketType: "Standard Admission",
     vehicle: "None",
+    description: "Visit the historic Jim Thompson House, home of the American silk entrepreneur. Learn about traditional Thai architecture and silk production."
   },
   {
     id: 8,
@@ -160,6 +167,7 @@ export const mockTours = [
     description: "Enjoy a luxurious yacht experience around Phuket's crystal-clear waters with private service.",
     duration: "8 hours",
     fuelType: "Diesel",
+    description: "Sail through the turquoise waters of Phuket with our luxury yacht rental. Perfect for private parties and relaxing cruises."
   },
   {
     id: 9,
@@ -180,5 +188,6 @@ export const mockTours = [
     description: "Rent a high-speed catamaran for island hopping and snorkeling around Similan and Phi Phi islands.",
     duration: "6 hours",
     fuelType: "Petrol",
+    description: "Enjoy an exhilarating ride on a speed catamaran. Discover hidden beaches, snorkel in coral reefs, and experience the sea like never before."
   },
 ];
