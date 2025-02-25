@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { FaHeart, FaStar, FaMapMarkerAlt } from "react-icons/fa";
+import dynamic from "next/dynamic";
+import { FaStar, FaMapMarkerAlt } from "react-icons/fa";
+const FaHeart = dynamic(() => import("react-icons/fa").then((mod) => mod.FaHeart), {
+  ssr: false, // Sunucu tarafında render etme
+});
 
 interface Tour {
   id: number;
@@ -17,9 +21,11 @@ interface Tour {
 
 interface TourCardProps {
   tour: Tour;
+  isFavorite: boolean;                  // Favori durumu
+  onToggleFavorite: (id: number) => void;
 }
 
-export default function TourCard({ tour }: TourCardProps) {
+export default function TourCard({ tour,isFavorite, onToggleFavorite }: TourCardProps) {
   const { name, image, location, oldPrice, price, rating, reviews, discount, category } = tour;
 
   return (
@@ -27,20 +33,20 @@ export default function TourCard({ tour }: TourCardProps) {
       {/* Resim Alanı */}
       <div className="relative w-full h-56">
         {/* Tour Etiketi - Resmin Üstünde */}
-        <div className="absolute top-2 left-2 bg-primary-500 text-white text-xs px-2 py-1 rounded z-20">
+        <div className="absolute bottom-2 left-2 bg-primary-500 text-white text-xs px-2 py-1 rounded z-20">
           {category}
         </div>
 
         {/* İndirim Rozeti */}
         {discount && (
-          <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded z-20">
+          <div className="absolute top-2 left-2 bg-orange-500 text-white text-xs px-2 py-1 rounded z-20">
             {discount}% OFF
           </div>
         )}
 
         {/* Favori Butonu */}
-        <button className="absolute top-2 right-10 text-gray-600 hover:text-red-500 z-20">
-          <FaHeart size={18} />
+        <button className="absolute top-2 right-2 text-gray-600 hover:text-red-500 z-20" onClick={() => onToggleFavorite(tour.id)}>
+        <FaHeart className={`text-2xl ${isFavorite ? "text-red-500" : "text-gray-400"}`} />
         </button>
 
         {/* Resim */}

@@ -4,7 +4,6 @@
     "noImplicitAny": false,      // any kullanımına izin verir
     "skipLibCheck": true,        // Kütüphane kontrolünü atlar (performans için)
     "moduleResolution": "node",
-    "baseUrl": "./src",
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
